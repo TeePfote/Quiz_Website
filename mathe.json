@@ -1,0 +1,29 @@
+[
+    {
+        "question": "What is 2 + 2 * 2 ?",
+        "answers": [
+            { "text": "4", "correct": false },
+            { "text": "8", "correct": false },
+            {"text": "6", "correct": true},
+            {"text": "2", "correct": false}
+        ]
+    },
+    {
+        "question": "What is 90 / 10 ?",
+        "answers": [
+            { "text": "10", "correct": false },
+            { "text": "9", "correct": true },
+            {"text": "0", "correct": false},
+            {"text": "90", "correct": false}
+        ]
+    },
+    {
+        "question": "What is (4 * 2) - (5 + 10 / 2)?",
+        "answers": [
+            { "text": "2", "correct": false },
+            { "text": "-4,5", "correct": false },
+            {"text": "18", "correct": false},
+            {"text": "-2", "correct": true}
+        ]
+    }
+]
