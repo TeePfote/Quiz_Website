@@ -110,15 +110,17 @@ function startGame() {
     setNextQuestion()
 }
 
+myChart = new Chart(
+    document.getElementById('myChart'),
+    config
+);
+
 function setNextQuestion() {
     resetState()
     showQuestion(shuffledQuestions[currentQuestionIndex])
-
-    myChart = new Chart(
-        document.getElementById('myChart'),
-        config
-    );
 }
+
+let rightButton;
 
 function showQuestion(question) {
     questionElement.innerText = question.question
@@ -127,7 +129,8 @@ function showQuestion(question) {
         button.innerText = answer.text
         button.classList.add('btn')
         if (answer.correct) {
-            button.dataset.correct = answer.correct
+            button.dataset.correct = answer.correct;
+            rightButton = button;
         }
         button.addEventListener('click', selectAnswer)
         answerButtonsElement.appendChild(button)
@@ -161,10 +164,10 @@ function selectAnswer(e) {
         startButton.innerText = 'Restart'
         startButton.classList.remove('hide')
     }
-    if (x > y) {
-        myChart.data.datasets[0].data[0] = ++c
+    if (selectedButton===rightButton) {
+        myChart.data.datasets[0].data[1] = ++c
         myChart.update()
-    } else if (y > x) {
+    } else {
         myChart.data.datasets[0].data[0] = ++w
         myChart.update()
     }
@@ -176,12 +179,12 @@ function setStatusClass(element, correct) {
     clearStatusClass(element)
     if (correct) {
         element.classList.add('correct')
-        x = x++
+        ++x
         //myChart.data.datasets[0].data[1] = ++c -1
         //myChart.update()
     } else {
         element.classList.add('wrong')
-        y = y++ -4
+        y = ++y -4
         //myChart.data.datasets[0].data[0] = ++w -3
         //myChart.update()
     }
