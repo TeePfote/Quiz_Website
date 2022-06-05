@@ -104,6 +104,13 @@ nextButton.addEventListener('click', () => {
 
 function startGame() {
     startButton.classList.add('hide')
+    x=0
+    y=0
+    c=0
+    w=0
+    myChart.data.datasets[0].data[0] = 0
+    myChart.data.datasets[0].data[1] = 0
+    myChart.update()
     shuffledQuestions = questions.sort(() => Math.random() - .5)
     currentQuestionIndex = 0
     questionContainerElement.classList.remove('hide')
@@ -118,6 +125,7 @@ myChart = new Chart(
 function setNextQuestion() {
     resetState()
     showQuestion(shuffledQuestions[currentQuestionIndex])
+
 }
 
 let rightButton;
@@ -163,6 +171,7 @@ function selectAnswer(e) {
     } else {
         startButton.innerText = 'Restart'
         startButton.classList.remove('hide')
+
     }
     if (selectedButton===rightButton) {
         myChart.data.datasets[0].data[1] = ++c
@@ -209,5 +218,4 @@ fetch(jsondata)
         console.log(loadedQuestions);
         questions = loadedQuestions;
     });
-
 
