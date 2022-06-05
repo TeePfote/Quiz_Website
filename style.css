@@ -127,6 +127,7 @@
 
 
     .navbar__menu.active {
+        display: block;
         background: #131313;
         top: 100%;
         opacity: 1;
