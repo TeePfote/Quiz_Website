@@ -23,8 +23,6 @@ const highlightMenu = () => {
     // console.log(scrollPos);
 
     // adds 'highlight' class to my menu items
-
-/*
     if (window.innerWidth > 960 && scrollPos < 600) {
         homeMenu.classList.add('highlight');
         aboutMenu.classList.remove('highlight');
@@ -43,19 +41,10 @@ const highlightMenu = () => {
     if ((elem && window.innerWIdth < 960 && scrollPos < 600) || elem) {
         elem.classList.remove('highlight');
     }
-
- */
 };
 
-/*
 window.addEventListener('scroll', highlightMenu);
 window.addEventListener('click', highlightMenu);
-
-*/
-
-
-
-
 
 //  Close mobile Menu when clicking on a menu item
 const hideMobileMenu = () => {
@@ -70,6 +59,33 @@ menuLinks.addEventListener('click', hideMobileMenu);
 navLogo.addEventListener('click', hideMobileMenu);
 
 //Neu
+let myChart;
+let c = 0;
+let w = 0;
+let x = 0;
+let y = 0;
+
+
+const data = {
+    labels: [
+        'Red',
+        'Green'
+    ],
+    datasets: [{
+        label: 'My First Dataset',
+        data: [w, c],
+        backgroundColor: [
+            'rgb(220,7,50)',
+            'rgb(69,220,3)',
+        ],
+        hoverOffset: 2
+    }]
+};
+
+const config = {
+    type: 'doughnut',
+    data: data,
+};
 
 const startButton = document.getElementById('start-btn')
 const nextButton = document.getElementById('next-btn')
@@ -87,29 +103,65 @@ nextButton.addEventListener('click', () => {
 
 function startGame() {
     startButton.classList.add('hide')
+    x=0
+    y=0
+    c=0
+    w=0
+    myChart.data.datasets[0].data[0] = 0
+    myChart.data.datasets[0].data[1] = 0
+    myChart.update()
     shuffledQuestions = questions.sort(() => Math.random() - .5)
     currentQuestionIndex = 0
     questionContainerElement.classList.remove('hide')
     setNextQuestion()
 }
 
+myChart = new Chart(
+    document.getElementById('myChart'),
+    config
+);
+
 function setNextQuestion() {
     resetState()
     showQuestion(shuffledQuestions[currentQuestionIndex])
+
 }
 
+let rightButton;
+
+// Bearbeitung darf erst starten, wenn der Browser alle Daten geleaden hat
+window.addEventListener('DOMContentLoaded', (event) => {
+    console.log('DOM fully loaded and parsed');
+
+    // Formel in Element boo schreiben
+    katex.render(jsondata, question, {
+        throwOnError: false
+    });
+
+    // alle Textknoten ab boo2 werden gerendert
+    window.renderMathInElement(question, {delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "$", right: "$", display: false}
+        ]} );
+
+});
+
 function showQuestion(question) {
-    questionElement.innerText = question.question
-    question.answers.forEach(answer => {
-        const button = document.createElement('button')
-        button.innerText = answer.text
-        button.classList.add('btn')
-        if (answer.correct) {
-            button.dataset.correct = answer.correct
-        }
-        button.addEventListener('click', selectAnswer)
-        answerButtonsElement.appendChild(button)
-    })
+        questionElement.innerText = question.question
+        question.answers.sort(() => Math.random() - .5).forEach(answer => {
+            const button = document.createElement('button')
+            button.innerText = answer.text
+            button.classList.add('btn')
+            if (answer.correct) {
+                button.dataset.correct = answer.correct;
+                rightButton = button;
+            }
+            button.addEventListener('click', selectAnswer)
+            answerButtonsElement.appendChild(button)
+
+        })
+    //}
+
 }
 
 function resetState() {
@@ -132,16 +184,34 @@ function selectAnswer(e) {
     } else {
         startButton.innerText = 'Restart'
         startButton.classList.remove('hide')
+
     }
+    if (selectedButton===rightButton) {
+        myChart.data.datasets[0].data[1] = ++c
+        myChart.update()
+    } else {
+        myChart.data.datasets[0].data[0] = ++w
+        myChart.update()
+    }
+    x=0
+    y=0
 }
 
 function setStatusClass(element, correct) {
     clearStatusClass(element)
     if (correct) {
         element.classList.add('correct')
+        ++x
+        //myChart.data.datasets[0].data[1] = ++c -1
+        //myChart.update()
     } else {
         element.classList.add('wrong')
+        y = ++y -4
+        //myChart.data.datasets[0].data[0] = ++w -3
+        //myChart.update()
     }
+
+    //myChart.update()
 }
 
 function clearStatusClass(element) {
