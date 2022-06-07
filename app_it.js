@@ -3,7 +3,6 @@ const menuLinks = document.querySelector('.navbar__menu');
 const navLogo = document.querySelector('#navbar__logo');
 
 
-
 //Alt
 
 //Display Mobile Menu
@@ -130,25 +129,53 @@ function setNextQuestion() {
 
 let rightButton;
 
-function showQuestion(question) {
-    questionElement.innerText = question.question
-    question.answers.sort(() => Math.random() - .5).forEach(answer => {
-        const button = document.createElement('button')
-        button.innerText = answer.text
-        button.classList.add('btn')
-        if (answer.correct) {
-            button.dataset.correct = answer.correct;
-            rightButton = button;
-        }
-        button.addEventListener('click', selectAnswer)
-        answerButtonsElement.appendChild(button)
+/*
+// Bearbeitung darf erst starten, wenn der Browser alle Daten geleaden hat
+window.addEventListener('DOMContentLoaded', (event) => {
+    console.log('DOM fully loaded and parsed');
 
-        //TODO: X und Y Variable wieder hinzufügen und diese dann bei einer neuen Frage wieder auf 0 setzen und immer
-        // schauen ob x >/< y ist um dann dasnDiagramm zu aktualisieren
-        //        //myChart.data.datasets[0].data[0] = ++w
-        //        //myChart.update()
+    // Formel in Element question schreiben
+    katex.render(jsondata, question, {
+        throwOnError: false
+    });
 
-    })
+    // alle Textknoten ab question werden gerendert
+    window.renderMathInElement(jsondata, {delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "$", right: "$", display: false}
+        ]});
+
+}); */
+
+
+
+function showQuestion(question){
+    /*if(topicSaver == quizQuestion["teil-mathe"]){
+        const questionString = "$$" + topicSaver[]
+    }*/
+    questionElement.innerText = "$$" + question.question + "$$"
+        renderMathInElement(questionElement, {
+            delimiters: [
+                {left: "$$", right: "$$", display: true},
+                {left: "$", right: "$", display: false},
+                {left: "\(", right: "\)", display: false},
+                {left: "\[", right: "\]", display: true},
+                {left: "\begin{equation}", right: "\end{equation}", display: true}
+            ]
+        })
+        //questionElement.innerText = question.question
+        question.answers.sort(() => Math.random() - .5).forEach(answer => {
+            const button = document.createElement('button')
+            button.innerText = answer.text
+            button.classList.add('btn')
+            if (answer.correct) {
+                button.dataset.correct = answer.correct;
+                rightButton = button;
+            }
+            button.addEventListener('click', selectAnswer)
+            answerButtonsElement.appendChild(button)
+
+        })
 }
 
 function resetState() {
@@ -207,7 +234,7 @@ function clearStatusClass(element) {
 }
 
 let jsondata;
-jsondata = "it.json"
+jsondata = "mathe.json"
 
 fetch(jsondata)
     .then(response => {
@@ -218,4 +245,5 @@ fetch(jsondata)
         console.log(loadedQuestions);
         questions = loadedQuestions;
     });
+
 
