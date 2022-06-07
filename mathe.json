@@ -9,7 +9,7 @@
         ]
     },
     {
-        "question": "What is 90 / 10 ?",
+        "question": "What is $$90 / 10$$ ?",
         "answers": [
             { "text": "10", "correct": false },
             { "text": "9", "correct": true },
@@ -19,6 +19,15 @@
     },
     {
         "question": "What is (4 * 2) - (5 + 10 / 2)?",
+        "answers": [
+            { "text": "2", "correct": false },
+            { "text": "-4,5", "correct": false },
+            {"text": "18", "correct": false},
+            {"text": "-2", "correct": true}
+        ]
+    },
+    {
+        "question": "What is $(x^2 + x^2)?$",
         "answers": [
             { "text": "2", "correct": false },
             { "text": "-4,5", "correct": false },
