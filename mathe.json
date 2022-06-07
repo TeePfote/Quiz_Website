@@ -1,15 +1,15 @@
 [
     {
-        "question": "What is 2 + 2 * 2 ?",
+        "question": "$$What is$$ \\space 2 + \\sqrt{2 * 2} \\space $$?$$",
         "answers": [
-            { "text": "4", "correct": false },
+            { "text": "4", "correct": true },
             { "text": "8", "correct": false },
-            {"text": "6", "correct": true},
+            {"text": "6", "correct": false},
             {"text": "2", "correct": false}
         ]
     },
     {
-        "question": "What is $$90 / 10$$ ?",
+        "question": "$$What is$$ \\space \\frac{90}{10} \\space $$?$$",
         "answers": [
             { "text": "10", "correct": false },
             { "text": "9", "correct": true },
@@ -18,7 +18,7 @@
         ]
     },
     {
-        "question": "What is (4 * 2) - (5 + 10 / 2)?",
+        "question": "$$What is$$ \\space (4 * 2) - (5 + \\frac{10}{2}) \\space $$?$$",
         "answers": [
             { "text": "2", "correct": false },
             { "text": "-4,5", "correct": false },
@@ -27,12 +27,12 @@
         ]
     },
     {
-        "question": "What is $(x^2 + x^2)?$",
+        "question": "$$What is$$ \\space \\sqrt{49} \\space $$?$$",
         "answers": [
-            { "text": "2", "correct": false },
-            { "text": "-4,5", "correct": false },
-            {"text": "18", "correct": false},
-            {"text": "-2", "correct": true}
+            { "text": "49", "correct": false },
+            { "text": "8", "correct": false },
+            {"text": "7", "correct": true},
+            {"text": "6", "correct": false}
         ]
     }
 ]
