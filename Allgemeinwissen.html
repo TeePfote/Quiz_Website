@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="manifest" href="manifest.webmanifest.json">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Allgemeinwissen Quiz</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+</head>
+<body>
+<!-- Navbar Section -->
+<nav class="navbar">
+    <div class="navbar__container">
+        <a href="index.html" id="navbar__logo"><i class="fas fa-fill"></i>JustLearn</a>
+        <div class="navbar__toggle" id="mobile-menu">
+            <span class="bar"></span> <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <ul class="navbar__menu">
+            <li class="navbar__item">
+                <a href="index.html" class="navbar__links" id="home-page">Home</a>
+            </li>
+            <li class="navbar__item">
+                <a href="mathe.html" class="navbar__links" id="about-page">Mathematik</a>
+            </li>
+            <li class="navbar__item">
+                <a href="internettechnologien.html" class="navbar__links" id="services-page">Internettechnologien</a>
+            </li>
+            <li class="navbar__item">
+                <a href="#allg_question" class="navbar__links" id="general">Allgemein</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Hero/Main Section -->
+<div class="hero_mathe" id="home">
+    <div class="hero_mathe_container">
+        <h1 class="hero_mathe_heading" id="allg_question">Allgemeinwissen Quiz</h1>
+        <div class="container">
+            <div id="question-container" class="hide">
+                <div class="question" id="question">Question</div>
+                <div id="answer-buttons" class="btn-grid">
+                    <button class="btn">Answer 1</button>
+                    <button class="btn">Answer 2</button>
+                    <button class="btn">Answer 3</button>
+                    <button class="btn">Answer 4</button>
+                </div>
+            </div>
+            <div class="controls">
+                <button id="start-btn" class="start-btn btn">Start</button>
+                <button id="next-btn" class="next-btn btn hide">Next</button>
+            </div>
+            <div>
+                <canvas id="myChart"></canvas>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+
+<!-- Footer Section -->
+<div class="footer__container">
+    <section class="social__media">
+        <div class="social__media--wrap">
+            <div class="footer__logo">
+                <a href="/" id="footer__logo"><i class="fas fa-fill"></i>JustLearn</a>
+            </div>
+            <p class="website__rights">© JustLearn 2022. All rights reserved | Styled by Jonas H.</p>
+
+        </div>
+    </section>
+</div>
+
+
+<script src="app_allg.js"></script>
+<script>
+    // Service Worker registrieren für PWA
+    if ('serviceWorker' in navigator) {
+        window.addEventListener("load", function() {
+            navigator.serviceWorker.register( "serviceworker.js").then(
+                function(success) {
+                    console.log( "ServiceWorker wurde erfolgreich registriert.", success);
+                }
+            ).catch(
+                function(error) {
+                    console.log( "ServiceWorker konnte leider nicht registriert werden.", error);
+                }
+            );
+        });
+    }
+</script>
+</body>
+</html>
