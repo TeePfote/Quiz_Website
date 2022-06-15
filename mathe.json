@@ -1,0 +1,47 @@
+[
+    {
+        "question": "$$Was ist$$ \\space 2+\\sqrt{2 * 2} \\space $$?$$",
+        "answers": [
+            { "text": "4", "correct": true },
+            { "text": "8", "correct": false },
+            {"text": "6", "correct": false},
+            {"text": "2", "correct": false}
+        ]
+    },
+    {
+        "question": "$$Was ist$$ \\space \\frac{90}{10} \\space $$?$$",
+        "answers": [
+            { "text": "10", "correct": false },
+            { "text": "9", "correct": true },
+            {"text": "0", "correct": false},
+            {"text": "90", "correct": false}
+        ]
+    },
+    {
+        "question": "$$Was ist$$ \\space \\frac{2}{10} * \\frac{10}{2} \\space $$?$$",
+        "answers": [
+            { "text": "5", "correct": true },
+            { "text": "-10", "correct": false },
+            {"text": "nicht lösbar", "correct": false},
+            {"text": "-5", "correct": false}
+        ]
+    },
+    {
+        "question": "$$Was ist$$ \\space \\sqrt{49} \\space $$?$$",
+        "answers": [
+            { "text": "49", "correct": false },
+            { "text": "8", "correct": false },
+            {"text": "7", "correct": true},
+            {"text": "6", "correct": false}
+        ]
+    },
+    {
+        "question": "\\space \\sqrt{(48*\\frac{-5}{10})} \\space",
+        "answers": [
+            { "text": "~4,9", "correct": false },
+            { "text": "8", "correct": false },
+            {"text": "nicht lösbar", "correct": true},
+            {"text": "e", "correct": false}
+        ]
+    }
+]
