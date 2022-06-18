@@ -1,0 +1,92 @@
+[
+    {
+        "question": "Aus welchen Farben besteht die Flagge von Guinea?",
+        "answers": [
+            { "text": "Scharz - Grün - Gelb", "correct": false },
+            { "text": "Grün - Orange - Blau", "correct": false },
+            {"text": "Weiß - Schwarz - Gelb", "correct": false},
+            {"text": "Rot - Gelb - Grün", "correct": true}
+        ]
+    },
+    {
+        "question": "Welches Tier wird auch als Salm bezeichnet?",
+        "answers": [
+            { "text": "der Molch", "correct": false },
+            { "text": "der Lachs", "correct": true },
+            {"text": "der Waran", "correct": false},
+            {"text": "die Schwalbe", "correct": false}
+        ]
+    },
+    {
+        "question": "In welchem Land werden\n die meisten\n Sprachen gesprochen?",
+        "answers": [
+            { "text": "Papua Neuguinea", "correct": true },
+            { "text": "Indien", "correct": false },
+            {"text": "Indonesien", "correct": false},
+            {"text": "Nigeria", "correct": false}
+        ]
+    },
+    {
+        "question": "Wie heißt die Hauptstadt der Slowakei?",
+        "answers": [
+            { "text": "Bratislava", "correct": true },
+            { "text": "Sofia", "correct": false },
+            {"text": "Ljubljan", "correct": false},
+            {"text": "Budapest", "correct": false}
+        ]
+    },
+    {
+        "question": "In welcher Einheit wird der\n elektrische Wiederstand gemessen?",
+        "answers": [
+            { "text": "Ohm", "correct": true },
+            { "text": "Volt", "correct": false },
+            {"text": "Henry", "correct": false},
+            {"text": "Pascal", "correct": false}
+        ]
+    },
+    {
+        "question": "Wo fanden 1994\n die Olympischen\n Winterspiele statt?",
+        "answers": [
+            { "text": "Norwegen", "correct": true },
+            { "text": "Schweden", "correct": false },
+            {"text": "Russland", "correct": false},
+            {"text": "Japan", "correct": false}
+        ]
+    },
+    {
+        "question": "Wer ist Agent 86?",
+        "answers": [
+            { "text": "Maxwell Smart", "correct": true },
+            { "text": "James Bond", "correct": false },
+            {"text": "Ethan Hunt", "correct": false},
+            {"text": "Frank Moses", "correct": false}
+        ]
+    },
+    {
+        "question": "Wie heißt die Maßeinheit\n für den Luftdruck?",
+        "answers": [
+            { "text": "Pascal", "correct": true },
+            { "text": "Henri", "correct": false },
+            {"text": "Ohm", "correct": false},
+            {"text": "Farad", "correct": false}
+        ]
+    },
+    {
+        "question": "Aus welchen\n Früchten wird\n Amagnac hergestellt?",
+        "answers": [
+            { "text": "weiße Trauben", "correct": true },
+            { "text": "Pomeranzen", "correct": false },
+            {"text": "Wacholder", "correct": false},
+            {"text": "Kimchi", "correct": false}
+        ]
+    },
+    {
+        "question": "Welches afrikanische Land\n ist keine Monarchie?",
+        "answers": [
+            { "text": "Südafrika", "correct": true },
+            { "text": "Swasiland", "correct": false },
+            {"text": "Marokko", "correct": false},
+            {"text": "Lesotho", "correct": false}
+        ]
+    }
+]

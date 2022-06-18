@@ -1,0 +1,92 @@
+[
+    {
+        "question": "Was ist eine Überschrift 1. Ordnung?",
+        "answers": [
+            { "text": "<h1></h1>", "correct": true },
+            { "text": "<p1></p1>", "correct": false },
+            {"text": "<h0></h0>", "correct": false},
+            {"text": "<a></a>", "correct": false}
+        ]
+    },
+    {
+        "question": "Welche HTML Syntax ist richtig?",
+        "answers": [
+            { "text": "<p></p>", "correct": true },
+            { "text": "</'body'><'body'>", "correct": false },
+            {"text": "<footer><footer>", "correct": false},
+            {"text": ".head{}", "correct": false}
+        ]
+    },
+    {
+        "question": "Welche Eigenschaft verweist auf das DOM-Objekt,\n das ein Ereignis ausgelöst hat?",
+        "answers": [
+            { "text": "target", "correct": true },
+            { "text": "self", "correct": false },
+            {"text": "object", "correct": false},
+            {"text": "source", "correct": false}
+        ]
+    },
+    {
+        "question": "Welche Methode konvertiert\n JSON-Daten in\n ein JS-Objekt?",
+        "answers": [
+            { "text": ".parse()", "correct": true },
+            { "text": ".toString()", "correct": false },
+            {"text": ".toObject()", "correct": false},
+            {"text": ".stringify()", "correct": false}
+        ]
+    },
+    {
+        "question": "Was ist true?",
+        "answers": [
+            { "text": "0 >= null", "correct": true },
+            { "text": "0 == null", "correct": false },
+            {"text": "0 > null", "correct": false},
+            {"text": "0 >= undefined", "correct": false}
+        ]
+    },
+    {
+        "question": "Welcher Datentyp ist nicht\n Teil des JSON-Standards?",
+        "answers": [
+            { "text": "date", "correct": true },
+            { "text": "number", "correct": false },
+            {"text": "string", "correct": false},
+            {"text": "array", "correct": false}
+        ]
+    },
+    {
+        "question": "Welcher Wert wird in den\n JSON-Spezifikationen unterstützt?",
+        "answers": [
+            { "text": "null", "correct": true },
+            { "text": "NaN", "correct": false },
+            {"text": "infinity", "correct": false},
+            {"text": "undefined", "correct": false}
+        ]
+    },
+    {
+        "question": "Was ist kein gültiges Attribut für das <textarea>-Element?",
+        "answers": [
+            { "text": "max", "correct": true },
+            { "text": "readonly", "correct": false },
+            {"text": "form", "correct": false},
+            {"text": "spellcheck", "correct": false}
+        ]
+    },
+    {
+        "question": "Welche Testbibliothek wird\n am häufigsten mit React\n in Verbindung gebracht?",
+        "answers": [
+            { "text": "Jest", "correct": true },
+            { "text": "Mocha", "correct": false },
+            {"text": "Chai", "correct": false},
+            {"text": "Sinon", "correct": false}
+        ]
+    },
+    {
+        "question": "Wie lautet die Abkürzung für\n das Domain Name System?",
+        "answers": [
+            { "text": "DNS", "correct": true },
+            { "text": "DS", "correct": false },
+            {"text": "DNNS", "correct": false},
+            {"text": "DNM", "correct": false}
+        ]
+    }
+]
