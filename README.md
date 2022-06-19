@@ -8,6 +8,8 @@ https://www.chartjs.org/docs/latest/developers/api.html | https://github.com/KaT
 Link zu Website: 
 https://www.informatik.htw-dresden.de/~s82095/
 
+Benutzter Browser: Chrome
+
 
 ### Beschreibung:
 
